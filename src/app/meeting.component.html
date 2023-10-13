@@ -1,0 +1,43 @@
+
+<div class="container">
+    <h2>Schedule Client Meeting</h2>
+    <form (ngSubmit)="onMeetingSubmit(meetingForm.value)" #meetingForm="ngForm">
+
+        <div class="form-group">
+            <label for="clientName">Client Name:</label>
+            <select id="clientName" name="clientName" required>
+                <!-- Options should be fetched and populated from the list of clients -->
+                <option value="ClientA">Client A</option>
+                <option value="ClientB">Client B</option>
+                <!-- ... -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="meetingDate">Meeting Date:</label>
+            <input type="date" id="meetingDate" name="meetingDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="meetingTime">Meeting Time:</label>
+            <input type="time" id="meetingTime" name="meetingTime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="meetingLocation">Location:</label>
+            <input type="text" id="meetingLocation" name="meetingLocation" required>
+        </div>
+
+        <div class="form-group">
+            <label for="meetingNotes">Notes:</label>
+            <textarea id="meetingNotes" name="meetingNotes" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Schedule Meeting</button>
+        </div>
+    </form>
+    <a routerLink="/create-client">Back to Client Creation</a>
+</div>
+
+

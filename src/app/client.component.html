@@ -5,22 +5,22 @@
 
         <div class="form-group">
             <label for="clientName">Client Name:</label>
-            <input type="text" id="clientName" name="clientName" required>
+            <input type="text" id="clientName" name="clientName" [(ngModel)]="clientName" required>
         </div>
 
         <div class="form-group">
             <label for="clientEmail">Client Email:</label>
-            <input type="email" id="clientEmail" name="clientEmail" required>
+            <input type="email" id="clientEmail" name="clientEmail" [(ngModel)]="clientEmail" required>
         </div>
 
         <div class="form-group">
             <label for="clientPhone">Client Phone:</label>
-            <input type="tel" id="clientPhone" name="clientPhone" required>
+            <input type="tel" id="clientPhone" name="clientPhone" [(ngModel)]="clientPhone" required>
         </div>
 
         <div class="form-group">
             <label for="clientDescription">Description:</label>
-            <textarea id="clientDescription" name="clientDescription" rows="4" required></textarea>
+            <textarea id="clientDescription" name="clientDescription" rows="4" [(ngModel)]="clientDescription" ></textarea>
         </div>
 
         <div class="form-group">

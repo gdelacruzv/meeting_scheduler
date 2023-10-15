@@ -40,7 +40,7 @@ app.get('/client', async (req, res) => {
 app.post('/clientmeetings', async (req, res) => {
     try {
         const { clientId, meetingDate, meetingTime } = req.body;
-        await db.query(`INSERT INTO clientmeetings (Meeting_date, client_id, meeting_time) VALUES (?, ?, ?)`, [clientId, meetingDate, meetingTime]);
+        await db.query(`INSERT INTO clientmeetings (client_id, Meeting_date, meeting_time) VALUES (?, ?, ?)`, [clientId, meetingDate, meetingTime]);
         res.json({ success: true, message: 'Meeting scheduled!' });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });

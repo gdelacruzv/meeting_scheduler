@@ -7,15 +7,26 @@ import { DataService } from './service/data.service';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent {
+  // Adding properties to the ClientComponent
+  clientName: string;
+  clientEmail: string;
+  clientPhone: string;
+  clientDescription: string;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) { 
+    this.clientName = '';
+    this.clientEmail = '';
+    this.clientPhone = '';
+    this.clientDescription = '';
+  }
 
   onSubmit(formData: any): void {
     // Map the form data to the structure expected by the server
     const dataToSubmit = {
-        clientName: formData.clientName,
-        clientEmail: formData.clientEmail,
-        clientPhone: formData.clientPhone
+        clientName: formData.clientName || this.clientName,     // Consider instance properties
+        clientEmail: formData.clientEmail || this.clientEmail,  // Consider instance properties
+        clientPhone: formData.clientPhone || this.clientPhone,   // Consider instance properties
+        clientDescription: formData.ClientDescription || this.clientPhone
     };
 
     // Call the dataService to send the data
@@ -31,3 +42,4 @@ export class ClientComponent {
       );
   }
 }
+

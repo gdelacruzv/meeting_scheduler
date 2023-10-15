@@ -1,7 +1,9 @@
 <h1>Welcome to {{ title }}!</h1>
 <nav>
-    <a [routerLink]="['/create-client']">Create Client</a>
-    <a [routerLink]="['/schedule-meeting']">Schedule Meeting</a>
+    
+    <a [routerLink]="['/create-client']" routerLinkActive="active">Create Client</a>
+    <a [routerLink]="['/schedule-meeting']" routerLinkActive="active">Schedule Meeting</a>
+    <router-outlet></router-outlet>
 </nav>
 
-<router-outlet></router-outlet>
+

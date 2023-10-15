@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientComponent } from './client.component';
 import { MeetingComponent } from './meeting.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: 'create-client', component: ClientComponent },
@@ -14,3 +15,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

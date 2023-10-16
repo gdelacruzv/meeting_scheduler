@@ -1,0 +1,42 @@
+-- Create the database
+CREATE DATABASE client_management;
+
+-- Use the created database
+USE client_management;
+
+-- Create the client table
+CREATE TABLE client (
+    client_id INT AUTO_INCREMENT PRIMARY KEY,
+    client_name VARCHAR(255) NOT NULL,
+    client_email VARCHAR(255) NOT NULL UNIQUE,
+    phone_number VARCHAR(15),
+    ClientDescription TEXT
+);
+
+-- Populate the client table with data
+INSERT INTO client (client_id, client_name, client_email, phone_number, ClientDescription)
+VALUES 
+(1, 'John Doe', 'john.doe@example.com', '+1122334455', NULL),
+(2, 'Rob Jay', 'Rob.jay@example.com', '+2233445566', NULL),
+(3, 'Bob Lee', 'bob.lee@example.com', '+3344556677', NULL),
+(4, 'John Doe', 'johndoe@example.com', '+1234567890', NULL),
+(5, 'Jane Smith', 'janesmith@example.com', '+0987654321', NULL),
+(6, 'Natalie Pederson', 'Npederson@gmail.com', '9092327364', NULL);
+
+-- Create the clientmeetings table
+CREATE TABLE clientmeetings (
+    meeting_id INT AUTO_INCREMENT PRIMARY KEY,
+    meeting_date DATE NOT NULL,
+    client_id INT,
+    meeting_time TIME,
+    meetingNotes TEXT,
+    FOREIGN KEY (client_id) REFERENCES client(client_id) ON DELETE CASCADE
+);
+
+-- Populate the clientmeetings table with data
+INSERT INTO clientmeetings (meeting_id, meeting_date, client_id, meeting_time, meetingNotes)
+VALUES
+(2, '2023-10-21', 2, NULL, NULL),
+(3, '2023-11-21', 3, NULL, NULL),
+(4, '2023-10-25', 1, NULL, NULL),
+(6, '2023-10-13', 6, '13:36:00', NULL);
